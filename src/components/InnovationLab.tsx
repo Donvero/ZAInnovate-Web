@@ -11,6 +11,7 @@ import {
   CheckCircle2,
   Lock,
   WifiOff,
+  Droplets,
 } from "lucide-react";
 
 export const InnovationLab: React.FC = () => {
@@ -211,6 +212,93 @@ export const InnovationLab: React.FC = () => {
               <div className="mt-4 pt-3 border-t border-navy-800 flex justify-between items-center text-xs text-slate-400">
                 <span>Cellular Data Preserved</span>
                 <span className="text-white font-bold font-mono">1.42 GB / Month</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Flagship 3: AURA-HYDRO */}
+        <div className="rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-navy-900 via-navy-850 to-navy-950 p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 -mt-10 -mr-10 h-64 w-64 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-7">
+              <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold uppercase tracking-wider">
+                <Droplets className="h-4 w-4" />
+                <span>Flagship 03 • Cyber-Physical Infrastructure</span>
+              </div>
+
+              <h3 className="mt-3 text-2xl sm:text-3xl font-black text-white">
+                AURA-HYDRO: Acoustic FFT Leak Telemetry
+              </h3>
+
+              <p className="mt-3 text-sm text-slate-300 leading-relaxed">
+                South Africa loses over R26 Billion annually to non-revenue water leaks. AURA-HYDRO combines IoT edge acoustic vibration telemetry with real-time Fast Fourier Transform (FFT) analysis in the 500Hz–2.5kHz pipe rupture band, pinpointing underground pipe bursts before roads collapse.
+              </p>
+
+              <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                <div className="flex items-center gap-2 text-slate-200">
+                  <CheckCircle2 className="h-4 w-4 text-cyan-400 flex-shrink-0" />
+                  <span>Acoustic TDOA Underground Triangulation</span>
+                </div>
+                <div className="flex items-center gap-2 text-slate-200">
+                  <CheckCircle2 className="h-4 w-4 text-cyan-400 flex-shrink-0" />
+                  <span>DWS &quot;No Drop&quot; Municipal Compliance Metric</span>
+                </div>
+                <div className="flex items-center gap-2 text-slate-200">
+                  <CheckCircle2 className="h-4 w-4 text-cyan-400 flex-shrink-0" />
+                  <span>Edge DSP &amp; LoRaWAN Low-Power Telemetry</span>
+                </div>
+                <div className="flex items-center gap-2 text-slate-200">
+                  <CheckCircle2 className="h-4 w-4 text-cyan-400 flex-shrink-0" />
+                  <span>Sub-Meter Rupture Location without Excavation</span>
+                </div>
+              </div>
+
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <span className="inline-flex items-center gap-2 rounded-xl bg-cyan-500 px-5 py-2.5 text-xs font-bold text-navy-950 shadow-md">
+                  <span>Municipal Pilot Active</span>
+                </span>
+                <span className="text-xs text-slate-400 font-mono">
+                  Target: 47.3% National Non-Revenue Water Reduction
+                </span>
+              </div>
+            </div>
+
+            {/* Visual preview card */}
+            <div className="lg:col-span-5 rounded-xl border border-navy-700 bg-navy-950/80 p-5 shadow-inner">
+              <div className="flex items-center justify-between border-b border-navy-800 pb-3 text-xs text-slate-400">
+                <span className="font-mono text-cyan-400 font-semibold">
+                  VALVE #09 TELEMETRY
+                </span>
+                <span>4.2 Bar Ambient Pressure</span>
+              </div>
+
+              <div className="mt-4 space-y-3">
+                <div className="rounded-lg border border-cyan-500/30 bg-cyan-500/5 p-3 text-xs">
+                  <div className="flex justify-between font-semibold text-white">
+                    <span>Acoustic Resonance Spike</span>
+                    <span className="text-cyan-400">1,200 Hz (91.2%)</span>
+                  </div>
+                  <p className="mt-1 text-[11px] text-slate-300">
+                    High-energy turbulence detected in Belgravia Valley municipal distribution feeder.
+                  </p>
+                </div>
+
+                <div className="rounded-lg border border-navy-700 bg-navy-900/80 p-3 text-xs">
+                  <div className="flex justify-between font-semibold text-white">
+                    <span>Estimated Physical Loss</span>
+                    <span className="text-rose-400">14,500 L / Hour</span>
+                  </div>
+                  <p className="mt-1 text-[11px] text-slate-300">
+                    Financial hemorrhage: R12,180.00 / day in lost treated drinking water.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-4 pt-3 border-t border-navy-800 flex justify-between items-center text-xs text-slate-400">
+                <span>Rupture Distance Triangulated</span>
+                <span className="text-cyan-400 font-bold font-mono">14.8m from Sensor A</span>
               </div>
             </div>
           </div>
