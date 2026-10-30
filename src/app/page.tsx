@@ -13,15 +13,68 @@ import {
   CheckCircle2,
   ArrowRight,
   Sparkles,
+  AlertCircle,
+  Loader2,
 } from "lucide-react";
 
 export default function HomePage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [engagementType, setEngagementType] = useState("sams-governance");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    organization: "",
+    phone: "",
+    message: "",
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          organization: formData.organization,
+          phone: formData.phone,
+          engagementType,
+          subject: `Strategic Inquiry: ${engagementType}`,
+          message: formData.message,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.error || "Submission failed. Please check your inputs.");
+      }
+
+      setFormSubmitted(true);
+      setFormData({
+        name: "",
+        email: "",
+        organization: "",
+        phone: "",
+        message: "",
+      });
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setErrorMessage(err.message);
+      } else {
+        setErrorMessage("An unexpected error occurred. Please try again.");
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -103,7 +156,10 @@ export default function HomePage() {
                       Thank you. A member of the ZAInnovate Technologies executive engineering panel will review your requirements and reach out within 24 hours.
                     </p>
                     <button
-                      onClick={() => setFormSubmitted(false)}
+                      onClick={() => {
+                        setFormSubmitted(false);
+                        setErrorMessage(null);
+                      }}
                       className="mt-6 rounded-lg bg-gold-500 px-5 py-2 text-xs font-bold text-navy-950 hover:bg-gold-400"
                     >
                       Submit Another Inquiry
@@ -111,6 +167,13 @@ export default function HomePage() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
+                    {errorMessage && (
+                      <div className="flex items-center gap-2 rounded-lg border border-red-500/40 bg-red-500/10 p-3 text-xs text-red-400">
+                        <AlertCircle className="h-4 w-4 flex-shrink-0" />
+                        <span>{errorMessage}</span>
+                      </div>
+                    )}
+
                     <div>
                       <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
                         Engagement Domain
@@ -146,6 +209,8 @@ export default function HomePage() {
                         <input
                           required
                           type="text"
+                          value={formData.name}
+                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                           placeholder="e.g. Adv. Thandiwe Sithole"
                           className="w-full rounded-lg border border-[#1e2d42] bg-navy-950 px-3.5 py-2.5 text-xs text-white placeholder:text-slate-500 focus:border-gold-500 focus:outline-none"
                         />
@@ -157,6 +222,8 @@ export default function HomePage() {
                         <input
                           required
                           type="email"
+                          value={formData.email}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="t.sithole@buffalocity.gov.za"
                           className="w-full rounded-lg border border-[#1e2d42] bg-navy-950 px-3.5 py-2.5 text-xs text-white placeholder:text-slate-500 focus:border-gold-500 focus:outline-none"
                         />
@@ -171,6 +238,8 @@ export default function HomePage() {
                         <input
                           required
                           type="text"
+                          value={formData.organization}
+                          onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
                           placeholder="e.g. Provincial Treasury / Metro / Corp"
                           className="w-full rounded-lg border border-[#1e2d42] bg-navy-950 px-3.5 py-2.5 text-xs text-white placeholder:text-slate-500 focus:border-gold-500 focus:outline-none"
                         />
@@ -181,6 +250,8 @@ export default function HomePage() {
                         </label>
                         <input
                           type="tel"
+                          value={formData.phone}
+                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           placeholder="+27 (0)43 000 0000"
                           className="w-full rounded-lg border border-[#1e2d42] bg-navy-950 px-3.5 py-2.5 text-xs text-white placeholder:text-slate-500 focus:border-gold-500 focus:outline-none"
                         />
@@ -194,6 +265,8 @@ export default function HomePage() {
                       <textarea
                         required
                         rows={4}
+                        value={formData.message}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         placeholder="Provide details on target audit cycle, procurement volume, or student cohort scale..."
                         className="w-full rounded-lg border border-[#1e2d42] bg-navy-950 p-3 text-xs text-white placeholder:text-slate-500 focus:border-gold-500 focus:outline-none resize-none"
                       />
@@ -201,10 +274,20 @@ export default function HomePage() {
 
                     <button
                       type="submit"
-                      className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gold-500 py-3 text-xs font-bold text-navy-950 hover:bg-gold-400 transition-all shadow-lg shadow-gold-500/10"
+                      disabled={isSubmitting}
+                      className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gold-500 py-3 text-xs font-bold text-navy-950 hover:bg-gold-400 transition-all shadow-lg shadow-gold-500/10 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      <span>Transmit Official Briefing</span>
-                      <Send className="h-3.5 w-3.5" />
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                          <span>Transmitting Official Briefing...</span>
+                        </>
+                      ) : (
+                        <>
+                          <span>Transmit Official Briefing</span>
+                          <Send className="h-3.5 w-3.5" />
+                        </>
+                      )}
                     </button>
 
                     <p className="text-[10px] text-center text-slate-500">
