@@ -18,10 +18,38 @@ import {
 export default function HomePage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [engagementType, setEngagementType] = useState("sams-governance");
+  const engagementLabels: Record<string, string> = {
+    "sams-governance": "SAMS (Predictive Gov & SCM)",
+    "umbono-edtech": "Umbono (Offline-First EdTech)",
+    "cloud-infra": "Sovereign Cloud & Infra",
+    "custom-engineering": "Mission-Critical Systems",
+  };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const contactEmail = "contact@zainnovate.co.za";
+    const selectedEngagement =
+      engagementLabels[engagementType] ?? "Strategic Engagement";
+
+    const subject = `Strategic Engagement Briefing: ${selectedEngagement}`;
+    const bodyLines = [
+      "ZAInnovate Strategic Engagement Briefing",
+      "",
+      `Engagement Domain: ${selectedEngagement}`,
+      `Full Name / Title: ${String(formData.get("fullName") ?? "")}`,
+      `Institutional Email: ${String(formData.get("institutionalEmail") ?? "")}`,
+      `Organisation / Entity: ${String(formData.get("organisation") ?? "")}`,
+      `Direct Contact Phone: ${String(formData.get("phone") ?? "Not provided")}`,
+      "",
+      "Scope of Briefing / Requirements:",
+      String(formData.get("requirements") ?? ""),
+    ];
+
+    window.location.href = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
     setFormSubmitted(true);
+    form.reset();
   };
 
   return (
@@ -97,10 +125,11 @@ export default function HomePage() {
                       <CheckCircle2 className="h-8 w-8" />
                     </div>
                     <h3 className="mt-4 text-xl font-bold text-white">
-                      Briefing Received
+                      Briefing Draft Opened
                     </h3>
                     <p className="mt-2 text-xs text-slate-300 max-w-md mx-auto">
-                      Thank you. A member of the ZAInnovate Technologies executive engineering panel will review your requirements and reach out within 24 hours.
+                      Your default email client has been opened with a pre-filled
+                      strategic briefing for ZAInnovate executive review.
                     </p>
                     <button
                       onClick={() => setFormSubmitted(false)}
@@ -144,6 +173,7 @@ export default function HomePage() {
                           Full Name / Title
                         </label>
                         <input
+                          name="fullName"
                           required
                           type="text"
                           placeholder="e.g. Adv. Thandiwe Sithole"
@@ -155,6 +185,7 @@ export default function HomePage() {
                           Official Institutional Email
                         </label>
                         <input
+                          name="institutionalEmail"
                           required
                           type="email"
                           placeholder="t.sithole@buffalocity.gov.za"
@@ -169,6 +200,7 @@ export default function HomePage() {
                           Organ of State / Entity
                         </label>
                         <input
+                          name="organisation"
                           required
                           type="text"
                           placeholder="e.g. Provincial Treasury / Metro / Corp"
@@ -180,6 +212,7 @@ export default function HomePage() {
                           Direct Contact Phone
                         </label>
                         <input
+                          name="phone"
                           type="tel"
                           placeholder="+27 (0)43 000 0000"
                           className="w-full rounded-lg border border-[#1e2d42] bg-navy-950 px-3.5 py-2.5 text-xs text-white placeholder:text-slate-500 focus:border-gold-500 focus:outline-none"
@@ -192,6 +225,7 @@ export default function HomePage() {
                         Scope of Briefing / Requirements
                       </label>
                       <textarea
+                        name="requirements"
                         required
                         rows={4}
                         placeholder="Provide details on target audit cycle, procurement volume, or student cohort scale..."
@@ -208,7 +242,8 @@ export default function HomePage() {
                     </button>
 
                     <p className="text-[10px] text-center text-slate-500">
-                      Protected under POPIA Act (Act 4 of 2013). Strict confidentiality guaranteed for all prospective tender and audit consultations.
+                      Protected under POPIA Act (Act 4 of 2013). Submission opens
+                      your local email client for direct transmission.
                     </p>
                   </form>
                 )}
