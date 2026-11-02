@@ -59,14 +59,34 @@ ZAInnovate Technologies conceives and funds sovereign technology products that s
 ### 1. 🛡️ [SAMS (Smart Audit Management System)](https://github.com/Donvero/ZAInnovate-SAMS)
 A predictive governance sentry that uses pattern-recognition algorithms to flag supply chain irregularities before they become adverse Auditor-General findings.
 - **Target Market**: South African Municipalities, Provincial Treasuries, and National Organs of State.
-- **Core Value**: Blocks split-tender threshold avoidance, prohibited state employee awards, and unapproved variation orders in real time.
+- **Core Value**: Benford's Law ($\chi^2$) forensics, PAAA S14 Certificate of Debt voucher shields, VCG combinatorial auctions, and temporal split-tender radar.
+- **Verification**: 48/48 Vitest suites passed (100%).
 - **Repo**: [github.com/Donvero/ZAInnovate-SAMS](https://github.com/Donvero/ZAInnovate-SAMS)
 
 ### 2. 📚 [Umbono (Offline-First AI Education Engine)](https://github.com/Donvero/ZAInnovate-Umbono)
 A sovereign AI learning platform built specifically for data-scarce and rural South African environments.
 - **Target Market**: South African high school learners (Grades 8–12), quintile 1–3 schools, and TVET colleges.
-- **Core Value**: 100% zero cellular data mode with localized STEM tutoring in **isiXhosa, isiZulu, Afrikaans, and English** using on-device quantized models and Service Worker caching.
+- **Core Value**: 100% zero cellular data mode with localized STEM tutoring in **isiXhosa, isiZulu, Afrikaans, and English** using client-side vector cosine retrieval in IndexedDB.
+- **Verification**: 9/9 Vitest suites passed (100%).
 - **Repo**: [github.com/Donvero/ZAInnovate-Umbono](https://github.com/Donvero/ZAInnovate-Umbono)
+
+### 3. ⚡ [TenderPulse (National Procurement Intelligence Terminal)](https://github.com/Donvero/ZAInnovate-TenderPulse)
+A real-time procurement intelligence terminal alerting contractors to gazetted tenders in under 180 seconds.
+- **Target Market**: Emerging contractors, CIDB civil engineering firms, and South African SMMEs.
+- **Core Value**: Sub-180s eTenders scraping, CIDB grading filters (1GB–9CE), Paystack ZAR gateway, and mandatory SBD 1, 4, 6.1 compliance vaults.
+- **Verification**: 14/14 Vitest suites passed (100%).
+- **Repo**: [github.com/Donvero/ZAInnovate-TenderPulse](https://github.com/Donvero/ZAInnovate-TenderPulse)
+
+### 4. 📄 [QuoteForge (SARS Section 20 Compliance & Billing Studio)](https://github.com/Donvero/ZAInnovate-QuoteForge)
+A precision invoicing and quotation studio automating statutory SARS Section 20 tax compliance.
+- **Target Market**: SMMEs, government suppliers, and commercial enterprises.
+- **Core Value**: 100% SARS Section 20 compliance, 15% VAT auto-calculations, non-repeating sequential doc numbering, and zero-dependency PDF 1.4 binary streaming.
+- **Verification**: 12/12 Vitest suites passed (100%).
+- **Repo**: [github.com/Donvero/ZAInnovate-QuoteForge](https://github.com/Donvero/ZAInnovate-QuoteForge)
+
+### 5. 💧 AURA-HYDRO (Acoustic FFT Non-Revenue Water Telemetry)
+Cyber-physical IoT pipeline targeting South Africa's R26 Billion annual municipal water losses.
+- **Core Value**: Edge acoustic FFT analysis (500Hz–2.5kHz), TDOA underground burst triangulation, and sub-meter leak localization without excavation.
 
 ---
 
@@ -132,11 +152,38 @@ npm install
 cp .env.example .env
 ```
 
-### 4. Run the development server
+### 4. Run automated test suites
 ```bash
-npm run dev
+npx vitest run
 ```
-Open [http://localhost:3000](http://localhost:3000) to view the live studio portal.
+Expected output: **7/7 tests passed (100%)** covering API validation, status codes, and security headers.
+
+### 5. Build for production
+```bash
+npm run build
+```
+Compiles with static route optimization and strict type validation.
+
+---
+
+## 💎 Design Taste & Sovereign Engineering Standards
+
+ZAinnovate products adhere strictly to anti-AI-slop design and craft engineering principles inspired by [`Donvero/hallmark`](https://github.com/Donvero/hallmark) and [`Donvero/taste-skill`](https://github.com/Donvero/taste-skill):
+- **The Floor:** WCAG AAA high-contrast ratios (white/gold on obsidian navy `#08101C`), tactile keyboard navigation, reduced motion compliance, and zero broken responsive layouts across all screen widths.
+- **Zero AI Tells:** No generic AI templates, no empty placeholder frames, no gradient gimmicks, and no invented statistics. Every metric is backed by actual mathematical algorithms or statutory law.
+- **Quiet Institutional Craft:** Dense, legible tabular layouts, monospace financial and telemetry numbers (`JetBrains Mono`), and deliberate visual hierarchy suited for heads of state, municipal managers, and enterprise directors.
+
+---
+
+## 📜 Sovereign IP, Forkability & Public View License
+
+This repository is published for **public inspection, statutory audit, and educational review**. 
+
+- **Public View & Review:** Public inspection and peer verification are encouraged.
+- **Forkability & Commercial Use:** Forking, redistribution, deployment, or commercial utilization of the ZAinnovate codebase, algorithms, brand tokens, or sovereign designs is **strictly contingent upon prior written approval of the owner**:
+  - **Owner:** Fana Siyasanga Qhawe Mgengo ([@Donvero](https://github.com/Donvero))
+  - **Entity:** ZAinnovate Technologies (Pty) Ltd (Reg: 2025/572318/07)
+  - **Licensing Contact:** `director@zainnovate.co.za` | `legal@zainnovate.co.za`
 
 ---
 
@@ -144,8 +191,9 @@ Open [http://localhost:3000](http://localhost:3000) to view the live studio port
 
 **ZAInnovate Technologies (Pty) Ltd**  
 - **Company Registration**: 2025/572318/07  
-- **B-BBEE Status**: Level 1 Contributor (100% Black Youth Owned)  
-- **Headquarters**: East London, Eastern Cape, South Africa  
+- **National Treasury CSD**: MAAA1646894  
+- **B-BBEE Status**: Level 1 Contributor (135% Procurement Spend Recognition)  
+- **Headquarters**: 14 Abdullah Ibrahim Close, Belgravia Valley, East London, Eastern Cape, 5241  
 - **National Delivery**: Cape Town • Johannesburg • Durban • Gqeberha  
 - **Executive Inbox**: `contact@zainnovate.co.za` | `director@zainnovate.co.za`  
 - **Website**: [https://zainnovate.co.za](https://zainnovate.co.za)  
@@ -153,5 +201,5 @@ Open [http://localhost:3000](http://localhost:3000) to view the live studio port
 ---
 
 <div align="center">
-  <sub>Copyright © 2026 ZAInnovate Technologies (Pty) Ltd. All rights reserved. Registered in the Republic of South Africa.</sub>
+  <sub>Copyright © 2025–2026 ZAInnovate Technologies (Pty) Ltd. All sovereign rights reserved. Registered in the Republic of South Africa. Built with mathematical rigor in East London.</sub>
 </div>

@@ -8,6 +8,8 @@
   --navy-dark: #08101C;
   --gold: #FFC20E;
   --gold-glow: rgba(255, 194, 14, 0.25);
+  --font-inter: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 }
 
 html {

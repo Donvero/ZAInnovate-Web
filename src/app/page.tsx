@@ -182,6 +182,8 @@ export default function HomePage() {
                         {[
                           { id: "sams-governance", label: "SAMS (Predictive Gov & SCM)" },
                           { id: "umbono-edtech", label: "Umbono (Offline-First EdTech)" },
+                          { id: "tenderpulse-procurement", label: "TenderPulse (National Tenders)" },
+                          { id: "quoteforge-billing", label: "QuoteForge (SARS S20 Billing)" },
                           { id: "cloud-infra", label: "Sovereign Cloud & Infra" },
                           { id: "custom-engineering", label: "Mission-Critical Systems" },
                         ].map((item) => (

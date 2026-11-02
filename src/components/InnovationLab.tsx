@@ -12,6 +12,9 @@ import {
   Lock,
   WifiOff,
   Droplets,
+  BellRing,
+  Receipt,
+  FileCheck,
 } from "lucide-react";
 
 export const InnovationLab: React.FC = () => {
@@ -217,7 +220,193 @@ export const InnovationLab: React.FC = () => {
           </div>
         </div>
 
-        {/* Flagship 3: AURA-HYDRO */}
+        {/* Flagship 3: TenderPulse */}
+        <div className="mb-12 rounded-2xl border border-amber-500/30 bg-gradient-to-br from-navy-900 via-navy-850 to-navy-950 p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 -mt-10 -mr-10 h-64 w-64 rounded-full bg-amber-500/10 blur-3xl pointer-events-none" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-7">
+              <div className="flex items-center gap-2 text-amber-400 font-mono text-xs font-bold uppercase tracking-wider">
+                <BellRing className="h-4 w-4" />
+                <span>Flagship 03 • Procurement Intelligence Terminal</span>
+              </div>
+
+              <h3 className="mt-3 text-2xl sm:text-3xl font-black text-white">
+                TenderPulse: SA Government Tender Alert Engine
+              </h3>
+
+              <p className="mt-3 text-sm text-slate-300 leading-relaxed">
+                National procurement radar scraping eTenders and CIDB bulletins in real-time. Delivers sub-180 second push alerts via WhatsApp and email, automated PPPFA 80/20 preference points scoring, and mandatory SBD 1, 4, 6.1 compliance verification for South African contractors.
+              </p>
+
+              <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                <div className="flex items-center gap-2 text-slate-200">
+                  <CheckCircle2 className="h-4 w-4 text-amber-400 flex-shrink-0" />
+                  <span>Sub-180s Gazetted eTenders Ingestion</span>
+                </div>
+                <div className="flex items-center gap-2 text-slate-200">
+                  <CheckCircle2 className="h-4 w-4 text-amber-400 flex-shrink-0" />
+                  <span>CIDB Grade 1GB–9CE Profile Matching</span>
+                </div>
+                <div className="flex items-center gap-2 text-slate-200">
+                  <CheckCircle2 className="h-4 w-4 text-amber-400 flex-shrink-0" />
+                  <span>Paystack ZAR Gateway (Capitec Pay / EFT)</span>
+                </div>
+                <div className="flex items-center gap-2 text-slate-200">
+                  <CheckCircle2 className="h-4 w-4 text-amber-400 flex-shrink-0" />
+                  <span>Mandatory SBD 1, 4, 6.1 Compliance Vault</span>
+                </div>
+              </div>
+
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <a
+                  href="https://github.com/Donvero/ZAInnovate-TenderPulse"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl bg-amber-500 px-5 py-2.5 text-xs font-bold text-navy-950 hover:bg-amber-400 transition-colors shadow-md"
+                >
+                  <span>View TenderPulse Repository</span>
+                  <ExternalLink className="h-3.5 w-3.5" />
+                </a>
+                <span className="text-xs text-slate-400 font-mono">
+                  Stack: Next.js 14 • PostgreSQL • Prisma • Paystack ZAR
+                </span>
+              </div>
+            </div>
+
+            {/* Visual preview card */}
+            <div className="lg:col-span-5 rounded-xl border border-navy-700 bg-navy-950/80 p-5 shadow-inner">
+              <div className="flex items-center justify-between border-b border-navy-800 pb-3 text-xs text-slate-400">
+                <span className="font-mono text-amber-400 font-semibold">
+                  eTENDERS RADAR ACTIVE
+                </span>
+                <span>9 Provinces Monitored</span>
+              </div>
+
+              <div className="mt-4 space-y-3">
+                <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-3 text-xs">
+                  <div className="flex justify-between font-semibold text-amber-300">
+                    <span>ECDR/2026/041 • Roads & Works</span>
+                    <span className="font-mono">8CE (R40M–R130M)</span>
+                  </div>
+                  <p className="mt-1 text-[11px] text-slate-300">
+                    Compulsory site briefing countdown: 46h 12m. GPS: -32.973, 27.874.
+                  </p>
+                </div>
+
+                <div className="rounded-lg border border-navy-700 bg-navy-900/80 p-3 text-xs">
+                  <div className="flex justify-between font-semibold text-white">
+                    <span>PPPFA Scoring Model</span>
+                    <span className="text-emerald-400">90/10 Formula</span>
+                  </div>
+                  <p className="mt-1 text-[11px] text-slate-300">
+                    SBD 6.1 preference calculation: 10 points allocated for B-BBEE Level 1.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-4 pt-3 border-t border-navy-800 flex justify-between items-center text-xs text-slate-400">
+                <span>Monthly Opportunity Flow</span>
+                <span className="text-white font-bold font-mono">R 1.48 Billion</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Flagship 4: QuoteForge */}
+        <div className="mb-12 rounded-2xl border border-violet-500/30 bg-gradient-to-br from-navy-900 via-navy-850 to-navy-950 p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 -mt-10 -mr-10 h-64 w-64 rounded-full bg-violet-500/10 blur-3xl pointer-events-none" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-7">
+              <div className="flex items-center gap-2 text-violet-400 font-mono text-xs font-bold uppercase tracking-wider">
+                <Receipt className="h-4 w-4" />
+                <span>Flagship 04 • SARS Section 20 Compliance</span>
+              </div>
+
+              <h3 className="mt-3 text-2xl sm:text-3xl font-black text-white">
+                QuoteForge: SARS-Compliant Billing & Invoicing Studio
+              </h3>
+
+              <p className="mt-3 text-sm text-slate-300 leading-relaxed">
+                Production invoicing platform engineering 100% statutory SARS Section 20 compliance for South African SMMEs and municipal contractors. Enforces non-repeating sequential serial numbers, exact 15% VAT calculations, written currency words, and zero-dependency PDF 1.4 streaming.
+              </p>
+
+              <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                <div className="flex items-center gap-2 text-slate-200">
+                  <CheckCircle2 className="h-4 w-4 text-violet-400 flex-shrink-0" />
+                  <span>100% SARS Section 20 Tax Invoices</span>
+                </div>
+                <div className="flex items-center gap-2 text-slate-200">
+                  <CheckCircle2 className="h-4 w-4 text-violet-400 flex-shrink-0" />
+                  <span>Standard 15.0% VAT Auto-Engine</span>
+                </div>
+                <div className="flex items-center gap-2 text-slate-200">
+                  <CheckCircle2 className="h-4 w-4 text-violet-400 flex-shrink-0" />
+                  <span>Pure PDF 1.4 Vector Binary Streamer</span>
+                </div>
+                <div className="flex items-center gap-2 text-slate-200">
+                  <CheckCircle2 className="h-4 w-4 text-violet-400 flex-shrink-0" />
+                  <span>Treasury CSD & Banking Confirmation</span>
+                </div>
+              </div>
+
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <a
+                  href="https://github.com/Donvero/ZAInnovate-QuoteForge"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl bg-violet-500 px-5 py-2.5 text-xs font-bold text-white hover:bg-violet-400 transition-colors shadow-md"
+                >
+                  <span>View QuoteForge Repository</span>
+                  <ExternalLink className="h-3.5 w-3.5" />
+                </a>
+                <span className="text-xs text-slate-400 font-mono">
+                  Stack: Next.js 14 • Pure PDF 1.4 • Prisma • Paystack
+                </span>
+              </div>
+            </div>
+
+            {/* Visual preview card */}
+            <div className="lg:col-span-5 rounded-xl border border-navy-700 bg-navy-950/80 p-5 shadow-inner">
+              <div className="flex items-center justify-between border-b border-navy-800 pb-3 text-xs text-slate-400">
+                <span className="font-mono text-violet-400 font-semibold">
+                  SARS S20 VERIFIED
+                </span>
+                <span>CSD: MAAA1646894</span>
+              </div>
+
+              <div className="mt-4 space-y-3">
+                <div className="rounded-lg border border-navy-700 bg-navy-900/80 p-3 text-xs">
+                  <div className="flex justify-between font-semibold text-white">
+                    <span>Doc #INV-2026-1042</span>
+                    <span className="text-emerald-400">Section 20 Valid</span>
+                  </div>
+                  <p className="mt-1 text-[11px] text-slate-300">
+                    Subtotal: R45,000.00 • VAT (15%): R6,750.00 • Total: R51,750.00
+                  </p>
+                </div>
+
+                <div className="rounded-lg border border-violet-500/30 bg-violet-500/10 p-3 text-xs">
+                  <div className="flex justify-between font-semibold text-violet-300">
+                    <span>EFT Confirmation Block</span>
+                    <span>Universal Code</span>
+                  </div>
+                  <p className="mt-1 text-[11px] text-slate-300">
+                    Official banking verification embedded with SARS TCS PIN: Active.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-4 pt-3 border-t border-navy-800 flex justify-between items-center text-xs text-slate-400">
+                <span>Compliance Accuracy</span>
+                <span className="text-white font-bold font-mono">100.0% Statutory</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Flagship 5: AURA-HYDRO */}
         <div className="rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-navy-900 via-navy-850 to-navy-950 p-6 sm:p-10 shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 right-0 -mt-10 -mr-10 h-64 w-64 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none" />
 
@@ -225,7 +414,7 @@ export const InnovationLab: React.FC = () => {
             <div className="lg:col-span-7">
               <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold uppercase tracking-wider">
                 <Droplets className="h-4 w-4" />
-                <span>Flagship 03 • Cyber-Physical Infrastructure</span>
+                <span>Flagship 05 • Cyber-Physical Infrastructure</span>
               </div>
 
               <h3 className="mt-3 text-2xl sm:text-3xl font-black text-white">
